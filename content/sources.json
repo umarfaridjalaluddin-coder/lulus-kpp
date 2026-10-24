@@ -1,0 +1,32 @@
+{
+  "MSBT5": {
+    "title": "Kurikulum Pendidikan Pemandu Motokar dan Motosikal (Gabungan), Edisi Keempat 2025",
+    "publisher": "Jabatan Pengangkutan Jalan Malaysia / Akademi Pengangkutan Jalan Malaysia",
+    "file": "MSBT5.pdf (202 halaman)",
+    "pageNote": "Nombor halaman bercetak di kaki halaman sama dengan indeks halaman PDF."
+  },
+  "JPJ-FAQ": {
+    "title": "FAQ KPP Gabungan (JPJ)",
+    "url": "https://www.jpj.gov.my/wp-content/uploads/2025/10/FAQ-KPP-GABUNGAN-NEW.pdf",
+    "verifiedOn": "2026-10-24",
+    "confirms": "70 soalan, 1 jam 15 minit, lulus 56/70, berkuat kuasa 29 Ogos 2025"
+  },
+  "MYGOV-JENIS": {
+    "title": "MyGOV: Jenis Lesen Memandu",
+    "url": "https://www.malaysia.gov.my/my/categories/pengangkutan/lesen-memandu/jenis-lesen-memandu",
+    "verifiedOn": "2026-10-24",
+    "confirms": "LDL 3 atau 6 bulan (maks 2 tahun); PDL 2 tahun; permohonan PDL dalam 1 tahun selepas lulus"
+  },
+  "MYGOV-KELAS": {
+    "title": "MyGOV: Lesen Mengikut Kelas Kenderaan",
+    "url": "https://www.malaysia.gov.my/my/categories/pengangkutan/lesen-memandu/lesen-mengikut-kelas-kenderaan-",
+    "verifiedOn": "2026-10-24",
+    "confirms": "Kelas A/A1 (OKU, 16/17 tahun), B2 hingga 250cc, B melebihi 500cc, D/DA BTM < 3500kg, E BTM > 7500kg"
+  },
+  "MYGOV-KEJARA": {
+    "title": "MyGOV: Kenali Sistem KEJARA",
+    "url": "https://www.malaysia.gov.my/my/categories/pengangkutan/lesen-memandu/kenali-sistem-kejara",
+    "verifiedOn": "2026-10-24",
+    "confirms": "Sistem mata demerit; separuh mata dipotong selepas 1 tahun tanpa kesalahan baharu. Ambang penggantungan bercanggah dengan buku (lihat SOURCES.md)."
+  }
+}

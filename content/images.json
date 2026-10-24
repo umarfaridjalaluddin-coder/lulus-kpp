@@ -1,0 +1,214 @@
+{
+  "w-simpang-empat": {
+    "file": "assets/img/w-simpang-empat.svg",
+    "alt": "Papan tanda berlian kuning berbingkai hitam dengan simbol tambah (+) hitam."
+  },
+  "w-simpang-t": {
+    "file": "assets/img/w-simpang-t.svg",
+    "alt": "Papan tanda berlian kuning dengan simbol huruf T hitam."
+  },
+  "w-simpang-kiri": {
+    "file": "assets/img/w-simpang-kiri.svg",
+    "alt": "Papan tanda berlian kuning dengan garisan menegak hitam dan satu cabang ke kiri."
+  },
+  "w-simpang-kanan": {
+    "file": "assets/img/w-simpang-kanan.svg",
+    "alt": "Papan tanda berlian kuning dengan garisan menegak hitam dan satu cabang ke kanan."
+  },
+  "w-selekoh-kanan": {
+    "file": "assets/img/w-selekoh-kanan.svg",
+    "alt": "Papan tanda berlian kuning dengan anak panah hitam yang melengkung ke kanan."
+  },
+  "w-selekoh-kiri": {
+    "file": "assets/img/w-selekoh-kiri.svg",
+    "alt": "Papan tanda berlian kuning dengan anak panah hitam yang melengkung ke kiri."
+  },
+  "w-selekoh-berkembar": {
+    "file": "assets/img/w-selekoh-berkembar.svg",
+    "alt": "Papan tanda berlian kuning dengan anak panah hitam berbentuk S, mula-mula membelok ke kanan kemudian ke kiri."
+  },
+  "w-bengkang-bengkok": {
+    "file": "assets/img/w-bengkang-bengkok.svg",
+    "alt": "Papan tanda berlian kuning dengan garisan hitam beralun naik ke atas."
+  },
+  "w-bulatan": {
+    "file": "assets/img/w-bulatan.svg",
+    "alt": "Papan tanda berlian kuning dengan tiga anak panah hitam membentuk bulatan."
+  },
+  "w-lampu-isyarat": {
+    "file": "assets/img/w-lampu-isyarat.svg",
+    "alt": "Papan tanda berlian kuning dengan simbol tiang lampu isyarat: lampu merah di atas, jingga di tengah dan hijau di bawah."
+  },
+  "w-jalan-sempit": {
+    "file": "assets/img/w-jalan-sempit.svg",
+    "alt": "Papan tanda berlian kuning dengan dua garisan hitam yang semakin rapat ke arah atas di kedua-dua belah."
+  },
+  "w-bonggol": {
+    "file": "assets/img/w-bonggol.svg",
+    "alt": "Papan tanda berlian kuning dengan anak panah hitam ke atas di atas satu bonggol hitam."
+  },
+  "w-dua-hala": {
+    "file": "assets/img/w-dua-hala.svg",
+    "alt": "Papan tanda berlian kuning dengan dua anak panah hitam bertentangan arah, satu ke atas dan satu ke bawah."
+  },
+  "w-bahaya-lain": {
+    "file": "assets/img/w-bahaya-lain.svg",
+    "alt": "Papan tanda berlian kuning dengan tanda seru hitam."
+  },
+  "w-berhenti-hadapan": {
+    "file": "assets/img/w-berhenti-hadapan.svg",
+    "alt": "Papan tanda berlian kuning dengan simbol oktagon merah kecil bertulis BERHENTI."
+  },
+  "w-beri-laluan-hadapan": {
+    "file": "assets/img/w-beri-laluan-hadapan.svg",
+    "alt": "Papan tanda berlian kuning dengan segi tiga terbalik berbingkai merah dan bahagian tengah putih."
+  },
+  "w-pejalan-kaki": {
+    "file": "assets/img/w-pejalan-kaki.svg",
+    "alt": "Papan tanda berlian kuning dengan simbol seorang pejalan kaki hitam sedang berjalan di atas jalur lintasan."
+  },
+  "w-pucuk-rebong": {
+    "file": "assets/img/w-pucuk-rebong.svg",
+    "alt": "Papan segi empat tepat kuning dengan tiga tanda anak panah (chevron) hitam yang menghala ke kanan."
+  },
+  "p-dilarang-masuk": {
+    "file": "assets/img/p-dilarang-masuk.svg",
+    "alt": "Papan tanda bulat merah penuh dengan satu bar mendatar putih di tengah."
+  },
+  "p-had-laju-50": {
+    "file": "assets/img/p-had-laju-50.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan nombor 50."
+  },
+  "p-had-laju-90": {
+    "file": "assets/img/p-had-laju-90.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan nombor 90."
+  },
+  "p-had-laju-110": {
+    "file": "assets/img/p-had-laju-110.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan nombor 110."
+  },
+  "p-had-laju-tamat": {
+    "file": "assets/img/p-had-laju-tamat.svg",
+    "alt": "Papan tanda bulat putih berbingkai hitam nipis dengan jalur hitam tebal menyerong."
+  },
+  "p-dilarang-memotong": {
+    "file": "assets/img/p-dilarang-memotong.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan dua kereta hitam bersebelahan dipangkah garisan merah menyerong, dan plat di bawahnya bertulis DILARANG MEMOTONG."
+  },
+  "p-berat-dilarang-memotong": {
+    "file": "assets/img/p-berat-dilarang-memotong.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan dua lori hitam bersebelahan dipangkah garisan merah menyerong, dan plat di bawahnya bertulis DILARANG MEMOTONG."
+  },
+  "p-dilarang-hon": {
+    "file": "assets/img/p-dilarang-hon.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan simbol hon (trompet) hitam dipangkah garisan merah menyerong."
+  },
+  "p-dilarang-pusing-balik": {
+    "file": "assets/img/p-dilarang-pusing-balik.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan anak panah hitam berbentuk huruf U terbalik dipangkah garisan merah menyerong."
+  },
+  "p-dilarang-belok-kanan": {
+    "file": "assets/img/p-dilarang-belok-kanan.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan anak panah hitam membelok ke kanan dipangkah garisan merah menyerong."
+  },
+  "p-dilarang-belok-kiri": {
+    "file": "assets/img/p-dilarang-belok-kiri.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan anak panah hitam membelok ke kiri dipangkah garisan merah menyerong."
+  },
+  "p-dilarang-letak": {
+    "file": "assets/img/p-dilarang-letak.svg",
+    "alt": "Papan tanda bulat biru berbingkai merah dengan satu garisan merah menyerong."
+  },
+  "p-dilarang-berhenti": {
+    "file": "assets/img/p-dilarang-berhenti.svg",
+    "alt": "Papan tanda bulat biru berbingkai merah dengan dua garisan merah bersilang membentuk X."
+  },
+  "p-berhenti": {
+    "file": "assets/img/p-berhenti.svg",
+    "alt": "Papan tanda oktagon (lapan segi) merah bertulis BERHENTI dengan huruf putih."
+  },
+  "p-had-lebar": {
+    "file": "assets/img/p-had-lebar.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan tulisan 2.5m di antara dua anak panah hitam yang menghala ke tengah."
+  },
+  "p-had-berat": {
+    "file": "assets/img/p-had-berat.svg",
+    "alt": "Papan tanda bulat putih berbingkai merah dengan tulisan 8t."
+  },
+  "p-kawasan-kemalangan": {
+    "file": "assets/img/p-kawasan-kemalangan.svg",
+    "alt": "Papan segi empat tepat merah bertulis AWAS KAWASAN KEMALANGAN dengan huruf putih."
+  },
+  "m-jalan-terus": {
+    "file": "assets/img/m-jalan-terus.svg",
+    "alt": "Papan tanda bulat biru dengan anak panah putih menghala lurus ke atas."
+  },
+  "m-belok-kiri": {
+    "file": "assets/img/m-belok-kiri.svg",
+    "alt": "Papan tanda bulat biru dengan anak panah putih menghala ke kiri."
+  },
+  "m-kekal-kiri": {
+    "file": "assets/img/m-kekal-kiri.svg",
+    "alt": "Papan tanda bulat biru dengan anak panah putih menyerong ke bawah sebelah kiri."
+  },
+  "m-mana-mana-hala": {
+    "file": "assets/img/m-mana-mana-hala.svg",
+    "alt": "Papan tanda bulat biru dengan dua anak panah putih, satu menyerong ke bawah kiri dan satu ke bawah kanan."
+  },
+  "m-jalan-sehala": {
+    "file": "assets/img/m-jalan-sehala.svg",
+    "alt": "Papan segi empat tepat biru bertulis JALAN SEHALA dengan anak panah putih menghala ke kanan."
+  },
+  "m-ikut-kiri": {
+    "file": "assets/img/m-ikut-kiri.svg",
+    "alt": "Papan segi empat tepat biru bertulis IKUT KIRI JIKA TIDAK MEMOTONG."
+  },
+  "r-garisan-putus": {
+    "file": "assets/img/r-garisan-putus.svg",
+    "alt": "Pandangan atas jalan dua lorong dengan garisan tengah putih terputus-putus."
+  },
+  "r-berkembar-terus": {
+    "file": "assets/img/r-berkembar-terus.svg",
+    "alt": "Pandangan atas jalan dua lorong dengan dua garisan putih berterusan dan selari di tengah."
+  },
+  "r-terus-dan-putus": {
+    "file": "assets/img/r-terus-dan-putus.svg",
+    "alt": "Pandangan atas jalan dua lorong. Di tengah ada garisan putih berterusan di sebelah kanan dan garisan putih terputus-putus di sebelah kiri. Kereta A berada di lorong kiri, bersebelahan garisan terputus-putus."
+  },
+  "r-kuning-tepi": {
+    "file": "assets/img/r-kuning-tepi.svg",
+    "alt": "Pandangan atas jalan dengan garisan kuning berterusan di sepanjang tepi kiri jalan."
+  },
+  "r-petak-kuning": {
+    "file": "assets/img/r-petak-kuning.svg",
+    "alt": "Pandangan atas persimpangan dengan petak berbingkai kuning yang diisi garisan kuning bersilang."
+  },
+  "r-lintasan-belang": {
+    "file": "assets/img/r-lintasan-belang.svg",
+    "alt": "Pandangan atas jalan dengan jalur-jalur putih tebal selari melintang jalan seperti belang zebra."
+  },
+  "r-kuning-melintang": {
+    "file": "assets/img/r-kuning-melintang.svg",
+    "alt": "Pandangan atas jalan dengan beberapa garisan kuning nipis melintang jalan secara berulang."
+  },
+  "r-chevron": {
+    "file": "assets/img/r-chevron.svg",
+    "alt": "Pandangan atas jalan dengan kawasan bertanda jalur-jalur putih menyerong berbentuk anak panah (chevron) di tengah jalan."
+  },
+  "l-merah": {
+    "file": "assets/img/l-merah.svg",
+    "alt": "Lampu isyarat trafik dengan lampu paling atas (merah) menyala; lampu tengah dan bawah padam."
+  },
+  "l-jingga": {
+    "file": "assets/img/l-jingga.svg",
+    "alt": "Lampu isyarat trafik dengan lampu tengah (jingga) menyala; lampu atas dan bawah padam."
+  },
+  "l-hijau": {
+    "file": "assets/img/l-hijau.svg",
+    "alt": "Lampu isyarat trafik dengan lampu paling bawah (hijau) menyala; lampu atas dan tengah padam."
+  },
+  "l-anak-panah": {
+    "file": "assets/img/l-anak-panah.svg",
+    "alt": "Lampu isyarat trafik dengan lampu merah menyala di atas dan satu anak panah hijau menghala ke kanan menyala di bawah."
+  }
+}
