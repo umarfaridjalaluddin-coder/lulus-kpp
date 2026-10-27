@@ -10,7 +10,7 @@ export const isEligible = (q) => q.status === 'verified';
  * - Within a chapter, the vehicle mix follows that chapter's pool so both car
  *   and motorcycle knowledge appear.
  * - Questions used in recent attempts are picked last.
- * - Two questions that share an image are never in the same exam.
+ * - Two questions about the same picture (question image or correct answer image) are never in the same exam.
  * Throws if the bank cannot supply enough questions.
  */
 export function selectExamQuestions(bank, config, { recentIds = new Set(), rand = Math.random } = {}) {
@@ -21,8 +21,9 @@ export function selectExamQuestions(bank, config, { recentIds = new Set(), rand 
   const picked = [];
   const pickedIds = new Set();
   const usedImages = new Set();
-  const canTake = (q) => !pickedIds.has(q.id) && !(q.image && usedImages.has(q.image.id));
-  const take = (q) => { picked.push(q); pickedIds.add(q.id); if (q.image) usedImages.add(q.image.id); };
+  const key = (q) => q.visualKey || q.image?.id || null;
+  const canTake = (q) => !pickedIds.has(q.id) && !(key(q) && usedImages.has(key(q)));
+  const take = (q) => { picked.push(q); pickedIds.add(q.id); if (key(q)) usedImages.add(key(q)); };
   // Fresh questions first, each group shuffled.
   const ordered = (list) => [...shuffle(list.filter((q) => !recentIds.has(q.id)), rand), ...shuffle(list.filter((q) => recentIds.has(q.id)), rand)];
 
@@ -51,11 +52,20 @@ export function selectExamQuestions(bank, config, { recentIds = new Set(), rand 
   return shuffle(picked, rand);
 }
 
-/** Filter for practice: chapter ('all' or number), vehicle ('all'|'motokar'|'motosikal'|'bersama'). */
+/**
+ * Filter for practice: chapter ('all' or number) and vehicle.
+ * 'motokar' / 'motosikal' include shared (bersama) topics, because those apply to both;
+ * 'bersama' gives shared topics only.
+ */
+export function vehicleMatches(q, vehicle) {
+  if (vehicle === 'all') return true;
+  if (vehicle === 'bersama') return q.vehicle === 'bersama';
+  return q.vehicle === vehicle || q.vehicle === 'bersama';
+}
 export function filterPractice(bank, { chapter = 'all', vehicle = 'all' } = {}) {
   return bank.filter((q) => isEligible(q)
     && (chapter === 'all' || q.chapter === Number(chapter))
-    && (vehicle === 'all' || q.vehicle === vehicle));
+    && vehicleMatches(q, vehicle));
 }
 
 export function selectPracticeQuestions(bank, filters, count, rand = Math.random) {

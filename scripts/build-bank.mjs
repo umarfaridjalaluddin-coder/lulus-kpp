@@ -5,6 +5,9 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { EXAM_CONFIG, CHAPTERS, VEHICLES, TOPICS } from '../app/js/config.js';
+import { validateVis, turnText } from '../app/js/visuals.js';
+import CAPTIONS from '../content/captions.mjs';
+import VISUALS from '../content/visuals.mjs';
 
 const root = new URL('../', import.meta.url);
 const sources = JSON.parse(readFileSync(new URL('content/sources.json', root)));
@@ -32,7 +35,27 @@ const questions = [];
 const seen = new Set();
 for (let ch = 1; ch <= 6; ch++) {
   const mod = await import(new URL(`content/bank/bab${ch}.mjs`, root));
-  for (const raw of mod.default) {
+  const extraUrl = new URL(`content/bank/bab${ch}-gambar.mjs`, root);
+  const extra = existsSync(extraUrl) ? (await import(extraUrl)).default : [];
+  for (const raw0 of [...mod.default, ...extra]) {
+    const raw = { ...raw0 };
+    // Picture answers: options are images (oi) or diagrams (od); visible text is a caption.
+    if (raw.oi) {
+      if (raw.o) err(raw.id, 'use either o or oi');
+      raw.o = raw.oi.map((k) => CAPTIONS[k] || '');
+      raw.oi.forEach((k) => { if (!images[k]) err(raw.id, `unknown option image ${k}`); if (!CAPTIONS[k]) err(raw.id, `no caption for ${k}`); });
+      if (new Set(raw.oi).size !== raw.oi.length) err(raw.id, 'duplicate option images');
+    }
+    if (raw.od) {
+      if (raw.o) err(raw.id, 'use either o or od');
+      raw.od.forEach((v) => { const e = validateVis(v); if (e) err(raw.id, `option diagram: ${e}`); });
+      raw.o = raw.od.map((v) => turnText(v.dir, v.variant) || '');
+    }
+    if (VISUALS[raw.id]) {
+      if (raw.img) err(raw.id, 'question has both image and diagram');
+      const e = validateVis(VISUALS[raw.id]); if (e) err(raw.id, `diagram: ${e}`);
+      raw.vis = VISUALS[raw.id];
+    }
     const id = raw.id;
     if (!/^B[1-6]-[A-Z]{3}-[0-9X]{3}$/.test(id)) err(id, 'bad id format');
     if (seen.has(id)) err(id, 'duplicate id');
@@ -61,7 +84,12 @@ for (let ch = 1; ch <= 6; ch++) {
     // Stable option IDs + deterministic stored order.
     const perm = seededPermutation(raw.o.length, id);
     const letters = ['a', 'b', 'c', 'd'];
-    const options = perm.map((srcIdx, pos) => ({ id: letters[pos], text: raw.o[srcIdx], _src: srcIdx }));
+    const options = perm.map((srcIdx, pos) => {
+      const o = { id: letters[pos], text: raw.o[srcIdx], _src: srcIdx };
+      if (raw.oi) o.img = { id: raw.oi[srcIdx], src: images[raw.oi[srcIdx]]?.file, alt: images[raw.oi[srcIdx]]?.alt };
+      if (raw.od) o.vis = raw.od[srcIdx];
+      return o;
+    });
     const correct = options.find((o) => o._src === 0);
     if (!correct) err(id, 'no correct option');
     const srcRefs = [{ type: 'book', key: 'MSBT5', chapter: ch, section: raw.sec, pdfPage: raw.pg, printedPage: raw.pg }];
@@ -69,10 +97,14 @@ for (let ch = 1; ch <= 6; ch++) {
     questions.push({
       id, chapter: ch, topic: raw.topic, vehicle: raw.veh, tags: raw.tags || [],
       text: raw.q,
-      options: options.map(({ id: oid, text }) => ({ id: oid, text })),
+      options: options.map(({ id: oid, text, img, vis }) => ({ id: oid, text, ...(img ? { img } : {}), ...(vis ? { vis } : {}) })),
       correct: correct?.id,
       explanation: raw.e,
       image,
+      vis: raw.vis || null,
+      format: raw.oi ? 'picture' : raw.od ? 'diagram' : 'text',
+      // Picture that identifies this question's answer; two questions sharing a key never appear in one exam.
+      visualKey: raw.img || (raw.oi ? raw.oi[0] : null),
       sources: srcRefs,
       status,
       note: raw.note || null,
@@ -86,6 +118,7 @@ for (let i = 0; i < questions.length; i++) {
   for (let j = i + 1; j < questions.length; j++) {
     if (questions[i].image && questions[i].image.id === questions[j].image?.id && questions[i].text === questions[j].text) err(questions[j].id, `same image and text as ${questions[i].id}`);
     if (questions[i].image || questions[j].image) continue;
+    if (questions[i].format !== 'text' || questions[j].format !== 'text') continue;
     const b = new Set(norm(questions[j].text).split(' '));
     const inter = [...a].filter((x) => b.has(x)).length;
     const jac = inter / (a.size + b.size - inter);
@@ -118,6 +151,8 @@ const out = {
     byChapter: Object.fromEntries(Object.keys(CHAPTERS).map((c) => [c, eligible.filter((q) => q.chapter === Number(c)).length])),
     byVehicle: Object.fromEntries(Object.keys(VEHICLES).map((v) => [v, eligible.filter((q) => q.vehicle === v).length])),
     withImage: eligible.filter((q) => q.image).length,
+    pictureAnswers: eligible.filter((q) => q.format !== 'text').length,
+    withDiagram: eligible.filter((q) => q.vis).length,
   },
   ...body,
 };

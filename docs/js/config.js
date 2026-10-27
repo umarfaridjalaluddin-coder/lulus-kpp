@@ -14,7 +14,8 @@ export const EXAM_CONFIG = Object.freeze({
     url: 'https://www.jpj.gov.my/wp-content/uploads/2025/10/FAQ-KPP-GABUNGAN-NEW.pdf',
     effectiveDate: '2025-08-29',
     verifiedOn: '2026-10-24',
-    notes: '70 soalan, 1 jam 15 minit, lulus 56/70. Semua kelas lesen kecuali kelas E. Format lama (50 soalan, 45 minit, 42/50) tidak lagi digunakan untuk ujian gabungan.',
+    recheckedOn: '2026-10-27',
+    notes: '70 soalan, 1 jam 15 minit, lulus 56/70. Semua kelas lesen kecuali kelas E. Format lama (50 soalan, 45 minit, 42/50) tidak lagi digunakan untuk ujian gabungan. Semakan semula 27 Okt 2026: tiada format baharu ditemui.',
   },
   // The app's own practice distribution. JPJ has not published topic quotas,
   // question order or section pass rules; this is NOT an official quota.

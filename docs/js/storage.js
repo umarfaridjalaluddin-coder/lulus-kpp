@@ -53,8 +53,21 @@ export function createStore(backend = (() => { try { return globalThis.localStor
     // Question IDs to revise (wrong or unanswered), with when they were last missed.
     getMistakes: () => read('mistakes', {}),
     saveMistakes: (m) => write('mistakes', m),
+    // Adventure progress (XP, first attempts, stages, badges, vehicle) and app settings.
+    getGame: () => read('game', null),
+    saveGame: (g) => write('game', g),
+    getSettings: () => read('settings', null),
+    saveSettings: (s) => write('settings', s),
+    // Recent practice/adventure session summaries (kept apart from exam history).
+    getSessions: () => read('sessions', []),
+    addSession(sum) {
+      const list = read('sessions', []);
+      if (list.some((x) => x.id === sum.id)) return false;
+      list.unshift(sum);
+      return write('sessions', list.slice(0, 30));
+    },
     resetAll() {
-      for (const k of ['activeExam', 'examHistory', 'practiceStats', 'bookmarks', 'mistakes']) remove(k);
+      for (const k of ['activeExam', 'examHistory', 'practiceStats', 'bookmarks', 'mistakes', 'game', 'settings', 'sessions']) remove(k);
     },
   };
 }

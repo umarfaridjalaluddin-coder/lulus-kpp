@@ -26,7 +26,7 @@ await sharp(maskable).resize(512, 512).png().toFile(join(APP, 'assets/icon-maska
 } else console.warn('sharp not found: keeping existing PNG icons');
 
 // ---------- PWA ----------
-cpSync(APP, join(DIST, 'pwa'), { recursive: true, filter: (p) => !p.endsWith('sw.template.js') && !p.endsWith('_gallery.html') });
+cpSync(APP, join(DIST, 'pwa'), { recursive: true, filter: (p) => !p.endsWith('sw.template.js') && !p.includes('/_') });
 const files = [];
 const walk = (d) => { for (const f of readdirSync(d)) { const p = join(d, f); if (statSync(p).isDirectory()) walk(p); else files.push(relative(join(DIST, 'pwa'), p)); } };
 walk(join(DIST, 'pwa'));
@@ -37,7 +37,7 @@ writeFileSync(join(DIST, 'pwa', 'sw.js'), sw);
 
 // ---------- Single-file artifact ----------
 // Concatenate ES modules in dependency order, dropping import/export syntax.
-const order = ['config.js', 'rng.js', 'scoring.js', 'selection.js', 'attempt.js', 'storage.js', 'app.js'];
+const order = ['config.js', 'rng.js', 'scoring.js', 'selection.js', 'attempt.js', 'storage.js', 'visuals.js', 'scene.js', 'progress.js', 'app.js'];
 let js = '';
 for (const f of order) {
   let src = readFileSync(join(APP, 'js', f), 'utf8');
@@ -47,15 +47,14 @@ for (const f of order) {
   js += `\n// ---- ${f} ----\n${src}`;
 }
 const data = JSON.parse(readFileSync(join(APP, 'data/questions.json'), 'utf8'));
+const inline = (src) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(readFileSync(join(APP, src), 'utf8').trim())}`;
 for (const q of data.questions) {
-  if (q.image) {
-    const svg = readFileSync(join(APP, q.image.src), 'utf8').trim();
-    q.image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-  }
+  if (q.image) q.image.src = inline(q.image.src);
+  for (const o of q.options) if (o.img) o.img.src = inline(o.img.src);
 }
 const css = readFileSync(join(APP, 'css/app.css'), 'utf8');
 const safeJson = JSON.stringify(data).replace(/</g, '\\u003c');
-const page = `<title>Lulus KPP</title>
+const page = `<title>Lulus KPP: Jalan ke Lesen</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

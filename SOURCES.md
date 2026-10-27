@@ -11,7 +11,7 @@ Prepared 24 October 2026.
 - **Page numbers:** the printed footer number equals the PDF page index throughout (verified on pp. 17, 19, 28, 30, 31, 40, 57–64, 103). Each question stores both `pdfPage` and `printedPage`.
 - Some early pages contain leftover overlaid text from an older layout (e.g. p. 11 shows both "56/70" and "56/80"). The current value was confirmed online (see below).
 
-## Online verification (checked 24 Oct 2026)
+## Online verification (checked 24 Oct 2026; format re-checked 27 Oct 2026, no newer official format found)
 
 | Key | Source | Confirms |
 |---|---|---|
@@ -35,12 +35,14 @@ No newer combined-exam format than the October 2025 FAQ was found.
 
 Other licence rules taken from the book without separate online confirmation (e.g. PDL alcohol 0.00%, CDL validity 1–10 years, "P" sign placement, vocational licence ages) are marked with the book page only.
 
-## Content status
+## Content status (27 Oct 2026)
 
-- **371 scored questions** (+3 excluded) across all six chapters. Chapter 1: 159, Chapter 2: 20, Chapter 3: 66, Chapter 4: 43, Chapter 5: 45, Chapter 6: 38.
-- Vehicle: 273 shared, 48 car-specific, 50 motorcycle-specific.
-- Topics: road signs 80, prudent driving 45, maintenance 46, licence 35, hazards 32, conditions 32, safety equipment 28, emergencies 26, ethics 21, markings & lights 20, KEJARA 6. 38 are practical-scenario questions.
-- 54 image questions using 53 original SVG illustrations (warning, prohibition and mandatory signs, road markings, traffic lights), drawn to match the shapes, colours and symbols in the book.
+- **393 scored questions** (+3 excluded) across all six chapters. Chapter 1: 179, Chapter 2: 20, Chapter 3: 68, Chapter 4: 43, Chapter 5: 45, Chapter 6: 38.
+- Vehicle: 295 shared, 48 car-specific, 50 motorcycle-specific.
+- 54 questions show a sign, marking or traffic-light image (53 original SVG illustrations drawn to match the shapes, colours and symbols in the book).
+- 22 picture-answer questions: 20 "pick the sign/light/marking" questions (Bab 1, pp. 34–64) and 2 junction-path questions based on the book's turning diagrams (pp. 130–131). Visible answer text describes each picture without naming its meaning.
+- 48 questions carry a diagram: junction layouts with direction arrows, safe following distance (2-/4-second rule), and car/motorcycle side views with the named component highlighted. A diagram is only attached when it depicts what the question already states; mappings that would reveal the answer (e.g. the 2-second counting question, the "which marker" question) were deliberately left out.
+- Exams never include two questions about the same picture.
 - Every question records book chapter, section, PDF and printed page, review status, and web sources with verification dates where used. Full list: `reports/question-bank.csv`.
 
 ### Not done / limits
@@ -48,3 +50,5 @@ Other licence rules taken from the book without separate online confirmation (e.
 - Questions were written and checked against the textbook text by Claude. A certified driving instructor has not reviewed them. A human review pass using `reports/question-bank.csv` is recommended before relying on it commercially.
 - Police and driver hand-signal diagrams (pp. 35–36), information signs (hospital, petrol, parking), temporary work-zone signs and railway-crossing signs are covered by text questions only, not illustrated.
 - Chapter 2 has 20 questions for an exam quota of 5, so after about three exams Chapter 2 questions start repeating.
+- The road scene is a side view (slightly elevated). Left-hand traffic is shown with the player in the far lane and oncoming traffic in the near lane; road curves are not animated.
+- Vehicle and scenery artwork is original and simplified; it does not depict specific car or motorcycle models.

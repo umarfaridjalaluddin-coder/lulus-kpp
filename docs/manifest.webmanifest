@@ -1,7 +1,7 @@
 {
-  "name": "Lulus KPP",
+  "name": "Lulus KPP: Jalan ke Lesen",
   "short_name": "Lulus KPP",
-  "description": "Latihan teori KPP dan simulasi ujian KPP Gabungan 70 soalan.",
+  "description": "Permainan pembelajaran teori KPP dan simulasi ujian KPP Gabungan 70 soalan.",
   "lang": "ms",
   "start_url": "./",
   "scope": "./",

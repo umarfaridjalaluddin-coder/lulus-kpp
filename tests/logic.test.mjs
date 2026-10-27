@@ -34,7 +34,7 @@ test('every full exam has exactly 70 unique eligible questions (200 random draws
     assert.equal(qs.length, 70);
     assert.equal(new Set(qs.map((q) => q.id)).size, 70);
     assert.ok(qs.every((q) => q.status === 'verified'));
-    const imgs = qs.filter((q) => q.image).map((q) => q.image.id);
+    const imgs = qs.map((q) => q.visualKey).filter(Boolean);
     assert.equal(new Set(imgs).size, imgs.length, 'no repeated image in one exam');
     for (const [ch, n] of Object.entries(EXAM_CONFIG.practiceDistribution)) {
       assert.equal(qs.filter((q) => q.chapter === Number(ch)).length, n, `chapter ${ch}`);

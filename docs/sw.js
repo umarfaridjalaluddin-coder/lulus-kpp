@@ -1,7 +1,7 @@
 // Service worker: precaches the app shell, question bank and every question
 // image so practice and exams work offline after the first load.
 // __VERSION__ and __PRECACHE__ are filled in by scripts/build-dist.mjs.
-const CACHE = 'lulus-kpp-3235b99217';
+const CACHE = 'lulus-kpp-e135899bce';
 const PRECACHE = [
   "./",
   "./assets/icon-192.png",
@@ -67,10 +67,13 @@ const PRECACHE = [
   "./js/app.js",
   "./js/attempt.js",
   "./js/config.js",
+  "./js/progress.js",
   "./js/rng.js",
+  "./js/scene.js",
   "./js/scoring.js",
   "./js/selection.js",
   "./js/storage.js",
+  "./js/visuals.js",
   "./manifest.webmanifest"
 ];
 
